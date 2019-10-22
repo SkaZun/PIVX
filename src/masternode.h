@@ -71,7 +71,7 @@ public:
     std::string GetStrMessage() const override;
     const CTxIn GetVin() const override  { return vin; };
 
-    bool CheckAndUpdate(int& nDos, bool fRequireEnabled = true, bool fCheckSigTimeOnly = false);
+    bool CheckAndUpdate(int& nDos, bool fRequireEnabled = true, bool fCheckSigTimeOnly = false, bool fSkipCheckPingTimeAndRelay = false);
     void Relay();
 
     void swap(CMasternodePing& first, CMasternodePing& second) // nothrow
